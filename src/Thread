@@ -1,0 +1,31 @@
+How It Works
+1.MyThread Class:
+
+Presumably, MyThread implements Runnable and defines a run() method where the thread's task is defined.
+
+2.Creating Threads:
+
+Two MyThread objects (thread1 and thread2) are created.
+Each MyThread object is passed to a new Thread object (thread and thread3).
+3.Starting Threads:
+
+Calling start() on the Thread objects (thread and thread3) begins their execution. The run() method in the MyThread class is invoked concurrently by both threads.
+
+4.Concurrency:
+
+Both threads execute independently, and the output from their run() methods may interleave depending on the JVM's thread scheduling.
+
+Key Observations
+1.Separate Instances:
+
+thread1 and thread2 are separate instances of the MyThread class. Each thread runs independently with its own copy of the MyThread object.
+2.Thread Names:
+
+If the run() method logs Thread.currentThread().getName(), the names of the threads will be something like:
+Thread-0
+Thread-1
+
+3.Thread Safety:
+
+If MyThread has shared data, make sure to handle thread safety using synchronization or other techniques.
+
